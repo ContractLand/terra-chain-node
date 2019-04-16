@@ -1,0 +1,22 @@
+[
+  {
+    "name": "NODE_NAME",
+    "script": "app.js",
+    "log_date_format": "YYYY-MM-DD HH:mm Z",
+    "merge_logs": false,
+    "watch": true,
+    "max_restarts": 10,
+    "exec_interpreter": "node",
+    "exec_mode": "fork_mode",
+    "env": {
+      "NODE_ENV": "production",
+      "RPC_HOST": "terra-node",
+      "RPC_PORT": "8545",
+      "LISTENING_PORT": "30303",
+      "INSTANCE_NAME": "NODE_NAME",
+      "WS_SERVER": "ws://DASHBOARD_IP:DASHBOARD_PORT",
+      "WS_SECRET": "DASHBOARD_SECRET",
+      "VERBOSITY": 3
+    }
+  }
+]
