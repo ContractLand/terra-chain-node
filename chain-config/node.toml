@@ -1,0 +1,32 @@
+[parity]
+chain = "/chain-config/chain.json"
+auto_update = "critical"
+
+[footprint]
+pruning = "auto"
+
+[network]
+discovery = true
+reserved_peers = "/chain-config/bootnodes.txt"
+
+[rpc]
+port = 8545
+interface = "0.0.0.0"
+processing_threads = 4
+cors = ["all"]
+apis = ["safe"]
+hosts = ["all"]
+
+[websockets]
+port = 8546
+interface = "0.0.0.0"
+max_connections = 1000
+origins = ["all"]
+hosts = ["all"]
+apis = ["safe"]
+
+[secretstore]
+disable = true
+
+[ui]
+disable = true

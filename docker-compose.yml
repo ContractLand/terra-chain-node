@@ -1,7 +1,7 @@
 version: "3"
 
 services:
-  terra-validator:
+  validator:
     image: parity/parity:${PARITY_VERSION}
     command:
       --config /validator.toml
@@ -9,14 +9,36 @@ services:
       --nat extip:${IP_ADDRESS}
     user: root
     volumes:
-      - ./validator.toml:/validator.toml:ro
+      - ./chain-config/validator.toml:/validator.toml:ro
       - ./terra-chain-spec:/chain-config:ro
-      - chain-data:/root/.local/share/io.parity.ethereum/
+      - ./chain-data:/root/.local/share/io.parity.ethereum/
       - ./key/validator.json:/root/.local/share/io.parity.ethereum/keys/${NETWORK}/validator.json:ro
       - ./key/validator.pwd:/key/validator.pwd:ro
     ports:
       - 30303:30303
       - 30303:30303/udp
+    restart: on-failure
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "1"
+
+  full-node:
+    image: parity/parity:${PARITY_VERSION}
+    command:
+      --config /node.toml
+      --nat extip:${IP_ADDRESS}
+    user: root
+    volumes:
+      - ./chain-config/node.toml:/node.toml:ro
+      - ./terra-chain-spec:/chain-config:ro
+      - ./chain-data:/root/.local/share/io.parity.ethereum/
+    ports:
+      - 30303:30303
+      - 30303:30303/udp
+      - 8545:8545
+      - 8546:8546
     restart: on-failure
     logging:
       driver: "json-file"

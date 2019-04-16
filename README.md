@@ -1,6 +1,6 @@
-# Terra-Chain Validator Node
+# Terra-Chain Node
 
-Run a validator node in the Terra-Chain network with a single command.
+Setup of different nodes in the Terra-Chain network.
 
 ## Prerequisite
 - Make sure you have `git`, `docker`, and `docker-compose` installed.
@@ -11,7 +11,12 @@ Run a validator node in the Terra-Chain network with a single command.
 3. Populate files in `key` with your own wallet credentials.
 3. Run `./prepare_node`.
 
-## Run
-- To start node run: `docker-compose up -d`.
+## Run Validator
+- To start node run: `docker-compose up -d validator monitor`.
+- Confirm your node is running with `docker ps` and `docker log`
+- To stop node run: `docker-compose down`.
+
+## Run Full Node
+- To start node run: `docker-compose up -d full-node monitor`.
 - Confirm your node is running with `docker ps` and `docker log`
 - To stop node run: `docker-compose down`.
