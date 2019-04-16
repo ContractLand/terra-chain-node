@@ -12,7 +12,7 @@ services:
       - ./validator.toml:/validator.toml:ro
       - ./terra-chain-spec:/chain-config:ro
       - chain-data:/root/.local/share/io.parity.ethereum/
-      - ./key/validator.json:/root/.local/share/io.parity.ethereum/keys/mainnet/validator.json:ro
+      - ./key/validator.json:/root/.local/share/io.parity.ethereum/keys/${NETWORK}/validator.json:ro
       - ./key/validator.pwd:/key/validator.pwd:ro
     ports:
       - 30303:30303

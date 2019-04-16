@@ -3,7 +3,7 @@ chain = "/chain-config/chain.json"
 auto_update = "critical"
 
 [account]
-password = ["/key/authority.pwd"]
+password = ["/key/validator.pwd"]
 
 [mining]
 reseal_on_txs = "none"
