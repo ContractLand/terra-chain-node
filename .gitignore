@@ -1,4 +1,5 @@
 terra-chain-spec
 chain-data
-key
+key/*
+!key/.gitkeep
 .env
