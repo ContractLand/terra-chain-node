@@ -2,8 +2,19 @@
 chain = "/chain-config/chain.json"
 auto_update = "critical"
 
+[mining]
+# Tx rate limiting for user
+tx_queue_size = 1000
+tx_queue_mem_limit = 512
+tx_queue_per_sender = 100
+tx_queue_strategy = "gas_price"
+tx_queue_no_unfamiliar_locals = true
+tx_time_limit = 5000 # 5 seconds
+
 [footprint]
 pruning = "auto"
+cache_size = 128 # MB
+pruning_memory = 32 # MB
 
 [network]
 discovery = true
