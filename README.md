@@ -7,7 +7,7 @@ Setup of different nodes in the Terra-Chain network.
 
 ## Preparation
 1. Make a copy of `.env.example` and rename it to `.env`.
-2. Populate `.env` file with values given to you by the ContractLand team. Please contract team@contractland.io to receive those values.
+2. Populate `.env` file with validator details (if you are running a validator node).
 3. Populate files in `key` with your own wallet credentials.
 3. Run `./prepare_node`.
 

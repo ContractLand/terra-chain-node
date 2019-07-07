@@ -2,7 +2,7 @@ version: "3"
 
 services:
   validator:
-    image: parity/parity:${PARITY_VERSION}
+    image: contractland/terra-chain:latest
     command:
       --config /validator.toml
       --engine-signer ${VALIDATOR_ADDRESS}
@@ -25,7 +25,7 @@ services:
         max-file: "1"
 
   full-node:
-    image: parity/parity:${PARITY_VERSION}
+    image: contractland/terra-chain:latest
     command:
       --config /node.toml
       --nat extip:${IP_ADDRESS}
