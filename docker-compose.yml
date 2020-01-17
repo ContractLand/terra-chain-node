@@ -2,7 +2,7 @@ version: "3"
 
 services:
   validator:
-    image: contractland/terra-chain:latest
+    image: contractland/terra-chain:stable
     command:
       --config /validator.toml
       --engine-signer ${VALIDATOR_ADDRESS}
@@ -26,7 +26,7 @@ services:
         max-file: "1"
 
   full-node:
-    image: contractland/terra-chain:latest
+    image: contractland/terra-chain:stable
     command:
       --config /node.toml
       --nat extip:${IP_ADDRESS}
