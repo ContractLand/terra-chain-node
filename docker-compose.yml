@@ -17,6 +17,7 @@ services:
     ports:
       - 30303:30303
       - 30303:30303/udp
+      - 8545:8545
     restart: on-failure
     logging:
       driver: "json-file"
