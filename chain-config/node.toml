@@ -12,7 +12,7 @@ tx_queue_no_unfamiliar_locals = true
 tx_time_limit = 5000 # 5 seconds
 
 [footprint]
-pruning = "auto"
+pruning = "archive"
 cache_size = 128 # MB
 pruning_memory = 32 # MB
 
