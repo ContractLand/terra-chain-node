@@ -27,6 +27,7 @@ discovery = false
 reserved_peers = "/chain-config/bootnodes.txt"
 
 [footprint]
+tracing = "on"
 pruning = "archive"
 fat_db = "off"
 cache_size = 128 # MB
